@@ -1,5 +1,5 @@
 
-/* start C:\Users\evana\Desktop\IS480\1_2\1_2Querry.sql */
+/* start C:\Users\evana\Desktop\IS480\one\1_2Querry.sql */
 
 /* 1 */
 select table_name 
