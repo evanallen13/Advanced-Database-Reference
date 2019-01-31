@@ -1,10 +1,10 @@
 set echo off
 set feedback off
-set verify on
-set heading on
+set verify off
+set heading off
 
 
-/* start C:\Users\evana\Desktop\IS480\one\1_3.sql */
+/* start C:\Users\evana\Desktop\IS480\two\2_1.sql */
 
 
 /* #1 Display SName and Major of Students who are enrolled in IS 300 during Spring 2013 */
