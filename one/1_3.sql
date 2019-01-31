@@ -37,3 +37,29 @@ select schclasses.Dept, schclasses.CNum, Ctitle
 	and Snum = 101
 	and semester = 'Sp'
 	and year = 2013;
+
+/* #4 Andy has taken IS 300 several times. Display the year, semester, and grade where he took IS 300 */
+select year, semester, grade 
+	from students,schclasses,enrollments
+	where schclasses.callnum = enrollments.callnum
+	and students.snum = enrollments.snum 
+	and sname = 'Andy'
+	and schclasses.dept = 'IS'
+	and cnum = 300;
+
+/* #5 Display sname of students who have received an "A" in IS 300 and who is an IS major */
+select sname, enrollments.callnum
+	from students,schclasses,enrollments
+	where schclasses.callnum = enrollments.callnum
+	and students.snum = enrollments.snum
+	and schclasses.dept = 'IS'
+	and cnum = 300
+	and grade = 'A';
+
+/* #6 Perequisists to 380 */
+select PREREQ.pdept,PREREQ.pcnum,ctitle 
+	from PREREQ,courses
+	where PREREQ.pdept = courses.dept
+	and PREREQ.pcnum = courses.cnum
+	and PREREQ.dept = 'IS'
+	and PREREQ.cnum = 380;

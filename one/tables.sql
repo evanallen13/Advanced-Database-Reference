@@ -94,8 +94,8 @@ insert into schclasses values (10180,2013,'Fa','ACC','300',1,118);
 insert into schclasses values (10185,2013,'Fa','ACC','300',2,33);
 
 
-create table PREREQ
-	(dept varchar2(3),
+create table PREREQ(
+	dept varchar2(3),
 	cnum varchar2(3),
 	pdept varchar2(3),
 	pcnum varchar2(3),
