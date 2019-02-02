@@ -4,7 +4,7 @@ set verify off
 set heading off
 set serveroutput on
 
-/* start C:\Users\evana\Desktop\IS480\shit\shit.sql */
+/* start C:\Users\evana\Desktop\IS480\if_practice\if_practice.sql */
 /* declare 
 	x number(2) := 7; */
 
