@@ -1,8 +1,8 @@
-set echo off
-set feedback off
-set verify off
-set heading off
-/* start C:\Users\evana\Desktop\IS480\one\tables.sql */
+set echo on
+set feedback on
+set verify on
+set heading on
+/* start C:\Users\evana\Desktop\IS480\#1\tables.sql */
 
 drop table enrollments;
 drop table prereq;

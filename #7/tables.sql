@@ -3,7 +3,7 @@ set feedback on
 set verify on
 set heading on
 
-/* start C:\Users\evana\Desktop\IS480\seven\tables.sql */
+/* start C:\Users\evana\Desktop\IS480\#7\tables.sql */
 drop table customers;
 
 create table Customers(
