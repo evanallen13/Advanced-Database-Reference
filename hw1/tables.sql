@@ -75,18 +75,28 @@ insert into courses values ('IS','301','Statistics',3,3);
 insert into courses values ('IS','310','Business Comm',3,3);
 insert into courses values ('ACC','300','Basic Accounting',4,3);
 insert into courses values ('ACC','480','Advanced Accounting',4,4);
+insert into courses values ('MGT',425,'Managment',3,4);
+insert into courses values ('IS',380,'Basic Database',4,3);
+insert into courses values ('IS',385,'Python',3,3);
 
 insert into schclasses values (10110,2013,'Sp','IS','300',1,45);
 insert into schclasses values (10115,2013,'Sp','IS','300',2,35);
 insert into schclasses values (10120,2013,'Sp','BIO','101',1,35);
 insert into schclasses values (10125,2013,'Fa','ACC','300',1,118);
 insert into schclasses values (10130,2013,'Fa','ACC','300',2,33);
+insert into schclasses values (10135,2013,'Fa','IS',380,1,25);
+insert into schclasses values (10140,2013,'Fa','IS',385,1,33);
 
 insert into enrollments values (101,10110,'A',4);
 insert into enrollments values (102,10110,'A',4);
 insert into enrollments values (103,10120,'A',4);
 insert into enrollments values (101,10125,'C',2);
 insert into enrollments values (102,10130,'F',0);
+insert into enrollments values (101,10135,'B',3);
+insert into enrollments values (101,10140,'C',2);
+insert into enrollments values (102,10140,'B',3);
+insert into enrollments values (103,10135,'A',4);
+
 
 create table stu(
 	snum number(3) primary key,
@@ -135,5 +145,3 @@ insert into amazon values (1006,to_date('8/24/2016','mm/dd/yyyy'),104,1100);
 insert into amazon values (1007,to_date('1/5/2017','mm/dd/yyyy'),101,1400);
 insert into amazon values (1008,to_date('5/3/2017','mm/dd/yyyy'),101,50);
 insert into amazon values (1009,to_date('8/8/2017','mm/dd/yyyy'),103,89);
-
-
