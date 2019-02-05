@@ -6,7 +6,11 @@ set serveroutput on
 
 /* start C:\Users\evana\Desktop\IS480\decode_practice\tables.sql */
 
+drop table enrollments;
+drop table schclasses;
+drop table courses;
 drop table students;
+drop table majors;
 
 create table students(
 	snum number(3) primary key,
