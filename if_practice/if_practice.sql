@@ -4,9 +4,9 @@ set verify off
 set heading off
 set serveroutput on
 
-/* start C:\Users\evana\Desktop\IS480\if_practice\if_practice.sql */
-/* declare 
-	x number(2) := 7; */
+/* start C:\Users\evana\Desktop\IS480\if_practice\if_/* declare 
+	x number(2) := 7; */practice.sql */
+
 
 accept x prompt "Enter number: ";
 
