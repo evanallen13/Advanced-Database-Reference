@@ -3,18 +3,13 @@ set feedback on
 set verify on
 set heading on
 
-/* start C:\Users\evana\Desktop\IS480\hw1\tables.sql */
+/* start C:\Users\evana\Desktop\IS480\csv_practice\tables.sql */
 
 drop table enrollments;
 drop table schclasses;
 drop table courses;
 drop table students;
 drop table majors;
-
-drop table stu;
-
-drop table customers;
-drop table amazon;
 
 create table majors(
 	major varchar2(3) primary key,
@@ -97,52 +92,3 @@ insert into enrollments values (101,10135,'B',3);
 insert into enrollments values (101,10140,'C',2);
 insert into enrollments values (102,10140,'B',3);
 insert into enrollments values (103,10135,'A',4);
-
-
-create table stu(
-	snum number(3) primary key,
-	sname varchar2(15),
-	standing number(1),
-	major varchar2(3),
-	gpa number(2,1),
-	gender varchar2(1),
-	zip number(5),
-	status varchar2(15));
-
-insert into stu values (101,'Andy',3,'IS',2.8,'M',91101,'Active');
-insert into stu values (102,'Betty',4,'ACC',3.2,'F',91102,'Active');
-insert into stu values (103,'Cindy',2,'IS',1.5,'F',91101,'Probation');
-insert into stu values (104,'David',2,'FIN',3.3,'M',91104,'Active');
-insert into stu values (105,'Ellen',1,'IS',1.8,'M',91102,'Probation');
-insert into stu values (106,'Frank',3,'MKT',3.1,'F',91103,'Active');
-
-create table customers(
-	custNum number(3) primary key,
-	custName varchar2(10),
-	gender varchar2(2),
-	prime varchar2(2));
-
-create table amazon(
-	ordNum number(4) primary key,
-	ordDate date,
-	custNum number(3),
-	amount number(6,2),
-	constraint fk_orders_custNum foreign key (custNum) references customers(custNum));
-
-insert into customers values (101,'Andy','M','Y');
-insert into customers values (102,'Betty','F','Y');
-insert into customers values (103,'Cindy','F','N');
-insert into customers values (104,'David','M','N');
-insert into customers values (105,'Ellen','F','Y');
-insert into customers values (106,'Frank','M','Y');
-insert into customers values (107,'George','M','Y');
-
-insert into amazon values (1001,to_date('8/1/2015','mm/dd/yyyy'),101,400);
-insert into amazon values (1002,to_date('8/15/2015','mm/dd/yyyy'),102,1500);
-insert into amazon values (1003,to_date('12/3/2015','mm/dd/yyyy'),103,800);
-insert into amazon values (1004,to_date('2/6/2016','mm/dd/yyyy'),101,300);
-insert into amazon values (1005,to_date('3/7/2016','mm/dd/yyyy'),103,200);
-insert into amazon values (1006,to_date('8/24/2016','mm/dd/yyyy'),104,1100);
-insert into amazon values (1007,to_date('1/5/2017','mm/dd/yyyy'),101,1400);
-insert into amazon values (1008,to_date('5/3/2017','mm/dd/yyyy'),101,50);
-insert into amazon values (1009,to_date('8/8/2017','mm/dd/yyyy'),103,89);

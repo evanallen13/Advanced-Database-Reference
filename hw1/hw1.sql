@@ -5,7 +5,7 @@ set heading on
 
 /* start C:\Users\evana\Desktop\IS480\hw1\hw1.sql */
 
-/* Display Sname of Students who recieved an A in IS 380 and whis is not an IS major */
+/* Display Sname of Students who received an A in IS 380 and whose is not an IS major */
 select sname 
 	from Students,enrollments,schclasses 
 	where Students.snum = enrollments.snum
@@ -33,7 +33,7 @@ select snum
 	from enrollments,schclasses
 	where enrollments.callnum = schclasses.callnum
 	and dept = 'IS'
-	and cnum = 300
+	and cnum = 380
 intersect
 (select snum 
 	from enrollments,schclasses
@@ -43,22 +43,16 @@ select snum
 	from enrollments,schclasses
 	where enrollments.callnum = schclasses.callnum
 	and dept = 'IS'
-	and cnum = 3);
+	and cnum = 300);
 
 /* Find Students who did not take any course in Spring 2013 */
 select snum
-	from enrollments,schclasses
-	where enrollments.callnum = schclasses.callnum
+	from students
 minus 
 select snum 
 	from enrollments,schclasses
 	where enrollments.callnum = schclasses.callnum
 	and semester = 'Sp'
 	and year = 2013;
-
-
-
-
-
 
 
