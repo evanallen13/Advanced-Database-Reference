@@ -5,7 +5,7 @@ set heading on
 
 /* start C:\Users\evana\Desktop\IS480\hw1\hw1.sql */
 
-/* Display Sname of Students who received an A in IS 380 and whose is not an IS major */
+/* Display Sname of students who received an A in IS 300 and whose is not an IS major */
 select sname 
 	from Students,enrollments,schclasses 
 	where Students.snum = enrollments.snum
@@ -56,3 +56,7 @@ select snum
 	and year = 2013;
 
 
+select sname,grade,dept,cnum,major
+	from Students,enrollments,schclasses 
+	where Students.snum = enrollments.snum
+	and schclasses.callnum = enrollments.callnum;

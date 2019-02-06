@@ -1,7 +1,7 @@
-set echo on
-set feedback on
-set verify on
-set heading on
+set echo off
+set feedback off
+set verify off
+set heading off
 
 /* start C:\Users\evana\Desktop\IS480\hw1\tables.sql */
 
