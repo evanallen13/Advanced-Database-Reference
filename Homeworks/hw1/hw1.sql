@@ -3,7 +3,7 @@ set feedback on
 set verify off
 set heading on
 
-/* start C:\Users\evana\Desktop\IS480\hw1\hw1.sql */
+/* start C:\Users\evana\Desktop\IS480\homeworks\hw1\hw1.sql */
 
 /* Display Sname of students who received an A in IS 300 and whose is not an IS major */
 select sname 
@@ -16,13 +16,13 @@ select sname
 	and major != 'IS';
 
 /* Display zip codes where there are more than 200 freshman students */
-select zip, count(*)
-	from stu 
+select zip, count(*) as "# of students"
+	from students
 	where standing = 1 
 	group by zip
-	having count(*) > 200;
+	having count(*) >= 2;
 
-/* What is the average spending pf prime vs. non-prime members per person */
+/* What is the average spending of prime vs. non-prime members per person */
 select prime, sum(amount)/count(amount) as Average 
 	from amazon, customers
 	where customers.custNum = amazon.custNum
@@ -36,7 +36,7 @@ select snum
 	and cnum = 380
 intersect
 (select snum 
-	from enrollments,schclasses
+	from enrollments,schclasses /* This can be just students table */
 	where enrollments.callnum = schclasses.callnum
 minus 
 select snum 
@@ -55,8 +55,3 @@ select snum
 	and semester = 'Sp'
 	and year = 2013;
 
-
-select sname,grade,dept,cnum,major
-	from Students,enrollments,schclasses 
-	where Students.snum = enrollments.snum
-	and schclasses.callnum = enrollments.callnum;

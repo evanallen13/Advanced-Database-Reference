@@ -1,20 +1,18 @@
 set echo off
-set feedback off
+set feedback on
 set verify off
 set heading off
 
-/* start C:\Users\evana\Desktop\IS480\hw1\tables.sql */
+/* start C:\Users\evana\Desktop\IS480\homeworks\hw1\tables.sql */
 
 drop table enrollments;
 drop table schclasses;
-drop table courses;
 drop table students;
+drop table courses;
 drop table majors;
 
-drop table stu;
-
-drop table customers;
 drop table amazon;
+drop table customers;
 
 create table majors(
 	major varchar2(3) primary key,
@@ -27,6 +25,7 @@ create table students(
 	major varchar2(3),
 	gpa number(2,1),
 	gender varchar2(2),
+	zip number(5),
 	constraint fk_students_major foreign key (major) references majors(major));
 
 create table courses(
@@ -62,13 +61,13 @@ insert into majors values ('IS','Info Sys');
 insert into majors values ('MKT','Marketing');
 insert into majors values ('BIO','Biology');
 
-insert into students values (101,'Andy',3,'IS',2.8,'M');
-insert into students values (102,'Betty',4,'ACC',3.2,'F');
-insert into students values (103,'Cindy',2,'IS',2.5,'F');
-insert into students values (104,'David',2,'FIN',3.3,'M');
-insert into students values (105,'Ellen',1,'IS',2.8,'M');
-insert into students values (106,'Frank',3,'MKT',3.1,'F');
-insert into students values (107,'Evan',4,'IS',2.8,'M');
+insert into students values (101,'Andy',1,'IS',2.8,'M',91101);
+insert into students values (102,'Betty',4,'ACC',3.2,'F',91102);
+insert into students values (103,'Cindy',1,'IS',2.5,'F',91101);
+insert into students values (104,'David',2,'FIN',3.3,'M',91104);
+insert into students values (105,'Ellen',1,'IS',2.8,'M',91102);
+insert into students values (106,'Frank',3,'MKT',3.1,'F',91103);
+insert into students values (107,'Evan',1,'IS',2.8,'M',91101);
 
 insert into courses values ('BIO','101','Biology Lab',1,2);
 insert into courses values ('IS','300','Intro to MIS',3,2);
@@ -97,24 +96,6 @@ insert into enrollments values (101,10135,'B',3);
 insert into enrollments values (101,10140,'C',2);
 insert into enrollments values (102,10140,'B',3);
 insert into enrollments values (103,10135,'A',4);
-
-
-create table stu(
-	snum number(3) primary key,
-	sname varchar2(15),
-	standing number(1),
-	major varchar2(3),
-	gpa number(2,1),
-	gender varchar2(1),
-	zip number(5),
-	status varchar2(15));
-
-insert into stu values (101,'Andy',3,'IS',2.8,'M',91101,'Active');
-insert into stu values (102,'Betty',4,'ACC',3.2,'F',91102,'Active');
-insert into stu values (103,'Cindy',2,'IS',1.5,'F',91101,'Probation');
-insert into stu values (104,'David',2,'FIN',3.3,'M',91104,'Active');
-insert into stu values (105,'Ellen',1,'IS',1.8,'M',91102,'Probation');
-insert into stu values (106,'Frank',3,'MKT',3.1,'F',91103,'Active');
 
 create table customers(
 	custNum number(3) primary key,
