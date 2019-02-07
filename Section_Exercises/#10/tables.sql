@@ -1,9 +1,9 @@
 set echo off
-set feedback on
+set feedback off
 set verify on
-set heading on
+set heading off
 
-/* start C:\Users\evana\Desktop\IS480\#10\tables.sql */
+/* start C:\Users\evana\Desktop\IS480\section_exercises\#10\tables.sql */
 
 drop table enrollments;
 drop table schclasses;

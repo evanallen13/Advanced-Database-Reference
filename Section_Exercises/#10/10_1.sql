@@ -3,7 +3,7 @@ set feedback on
 set verify on
 set heading on
 
-/* start C:\Users\evana\Desktop\IS480\#10\10_1.sql */
+/* start C:\Users\evana\Desktop\IS480\section_exercises\#10\10_1.sql */
 
 /* #1 Find students who have not taken MGT 425 */
 select snum 
