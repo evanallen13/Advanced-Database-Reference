@@ -16,3 +16,5 @@ update stu
 	set username = substr(lastname,1,2)||substr(ssn,-4);
 
 select * from stu;
+
+commit;
