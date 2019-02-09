@@ -44,6 +44,11 @@ update orders
 	where cnum in (select cnum from customers where status = 'Inactive');
 
 /* #8 Write a SQL statement update the member to 'Gold' id he/she has spent over $1,500 */
-select onum,sum(amount)
-	from orders
-	group by onum;
+update customers 
+	set member = 'Gold'
+	where cnum in (select cnum from orders group by cnum having sum(amount) >= 1500);
+
+/* #9 Write a SQL statement to discontinue a product if we have received more than 10 cancellations status X */
+update products 
+	set status = 'Discontinue'
+	where pnum in (select pnum from orders group by pnum having count(*) > 10);
