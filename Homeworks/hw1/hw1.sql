@@ -36,8 +36,7 @@ select snum
 	and cnum = 380
 intersect
 (select snum 
-	from enrollments,schclasses /* This can be just students table */
-	where enrollments.callnum = schclasses.callnum
+	from students /* This can be just students table */
 minus 
 select snum 
 	from enrollments,schclasses
