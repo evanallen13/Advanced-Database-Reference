@@ -10,7 +10,8 @@ select snum
 	from students
 minus 
 select snum 
-	from enrollments;
+	from enrollments,schclasses
+	where enrollments.callnum = schclasses.callnum;
 
 /* #2 Find IS students who have not taken IS 380 */
 select snum
