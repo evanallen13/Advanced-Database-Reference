@@ -8,4 +8,6 @@ set heading on
 /* Sort classes in Sp,Su1,Su2,Fa order */
 select callnum,semester
 from schclasses
-order by decode(semester,'Sp','Sp','Su1','Su1','Su2','Su2','Fa','Fa');
+order by decode(semester,'Sp',1,'Su1',2,'Su2',3,'Fa',4);
+
+/* 
