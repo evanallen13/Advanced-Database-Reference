@@ -30,8 +30,5 @@ update studentEmail
 	set emailHost = substr(substr(emails,instr(emails,'@')+1),instr(substr(emails,instr(emails,'@')+1),'.'));
 
 
-
-
-
 select emails, username, emailhost
 	from studentEmail;
