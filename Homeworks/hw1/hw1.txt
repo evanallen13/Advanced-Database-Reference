@@ -1,0 +1,94 @@
+                             Evan Allen Homework 1 
+
+
+SQL> /* start C:\Users\evana\Desktop\IS480\homeworks\hw1\hw1.sql */
+SQL> 
+SL> /* #1 Display Sname of students who received an A in IS 300 and whose is not an IS major */
+SQL> select sname
+  2  	     from Students,enrollments,schclasses
+  3  	     where Students.snum = enrollments.snum
+  4  	     and schclasses.callnum = enrollments.callnum
+  5  	     and dept = 'IS'
+  6  	     and cnum = '300'
+  7  	     and grade = 'A'
+  8  	     and major != 'IS';
+
+SNAME                                                                           
+----------                                                                      
+Betty                                                                           
+
+1 row selected.
+
+SQL> 
+SQL> /* #2 Display zip codes where there are more than 200 freshman students */
+SQL> select zip, count(*) as "# of students"
+  2  	     from students
+  3  	     where standing = 1
+  4  	     group by zip
+  5  	     having count(*) >= 2;
+
+       ZIP # of students                                                        
+---------- -------------                                                        
+     91101             3                                                        
+
+1 row selected.
+
+SQL> 
+SQL> /* #3 What is the average spending of prime vs. non-prime members per person */
+SQL> select prime, sum(amount)/count(amount) as Average
+  2  	     from amazon, customers
+  3  	     where customers.custNum = amazon.custNum
+  4  	     group by prime;
+
+PR    AVERAGE                                                                   
+-- ----------                                                                   
+Y         730                                                                   
+N      547.25                                                                   
+
+2 rows selected.
+
+SQL> 
+SQL> /* #4  Display students who have taken IS 380 but never took IS 300 */
+SQL> select snum
+  2  	     from enrollments,schclasses
+  3  	     where enrollments.callnum = schclasses.callnum
+  4  	     and dept = 'IS'
+  5  	     and cnum = 380
+  6  intersect
+  7  (select snum
+  8  	     from students
+  9  minus
+ 10  select snum
+ 11  	     from enrollments,schclasses
+ 12  	     where enrollments.callnum = schclasses.callnum
+ 13  	     and dept = 'IS'
+ 14  	     and cnum = 300);
+
+      SNUM                                                                      
+----------                                                                      
+       103                                                                      
+
+1 row selected.
+
+SQL> 
+SQL> /* #5 Find Students who did not take any course in Spring 2013 */
+SQL> select snum
+  2  	     from students
+  3  minus
+  4  select snum
+  5  	     from enrollments,schclasses
+  6  	     where enrollments.callnum = schclasses.callnum
+  7  	     and semester = 'Sp'
+  8  	     and year = 2013;
+
+      SNUM                                                                      
+----------                                                                      
+       104                                                                      
+       105                                                                      
+       106                                                                      
+       107                                                                      
+
+4 rows selected.
+
+SQL> 
+SQL> spool off;
