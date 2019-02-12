@@ -5,21 +5,21 @@ set heading off
 
 /* start C:\Users\evana\Desktop\IS480\homeworks\hw2\tables.sql */
 
-drop table students;
+drop table trans;
 
-create table students(
-	SNum number(3) primary key,
-	Sname varchar2(15),
-	standing number(1),
-	major varchar2(3),
-	gpa number(2,1),
-	majorGpa number(2,1));
+create table trans(
+	transNum number(3) primary key,
+	transDate date,
+	acctNum varchar2(15),
+	transType varchar2(10),
+	amount number(4));
 
-insert into students values (101,'Andy',4,'IS',2.8,3.2);
-insert into students values (102,'Betty',2,Null,3.2,Null);
-insert into students values (103,'Cindy',3,'IS',2.5,3.5);
-insert into students values (104,'David',2,'FIN',3.3,3.0);
-insert into students values (105,'Ellen',1,Null,2.8,Null);	
-insert into students values (106,'Frank',3,'MKT',3.1,2.9);
-
+insert into trans values (101,'1-Feb-2016','123-0097','Credit',10);
+insert into trans values (102,'1-Feb-2016','X089-056','Credit',10);
+insert into trans values (103,'2-Feb-2016','123-0097','Debit',8);
+insert into trans values (104,'2-Feb-2016','123-0097','Debit',10);
+insert into trans values (105,'2-Feb-2016','F3377-D','Credit',10);
+insert into trans values (106,'2-Feb-2016','X089-056','Debit',9);
+insert into trans values (107,'2-Feb-2016','X089-056','Debit',9);
+insert into trans values (108,'3-Feb-2016','123-0097','Credit',9);
 
