@@ -3,7 +3,7 @@ set feedback on
 set verify on
 set heading on
 
-/* start C:\Users\evana\Desktop\IS480\#11\11_1.sql */
+/* start C:\Users\evana\Desktop\IS480\section_exercises\#11\11_1.sql */
 
 /* Pivot table that compares how many students male vs. female */
 select count(decode(gender,'M',snum)) as Males,
@@ -19,7 +19,7 @@ select
 	from students;
 
 /* Pivot table that displays gender compared to the number of students per major */
-select gender,
+select decode(gender,'M','Male','F','Female') as Gender,
 	count(decode(major,'ACC',snum)) as ACC,
 	count(decode(major,'FIN',snum)) as FIN,
 	count(decode(major,'IS',snum)) as "IS",
