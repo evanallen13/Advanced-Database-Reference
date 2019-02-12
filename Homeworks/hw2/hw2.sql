@@ -1,20 +1,36 @@
 set echo off
-set feedback on
+set feedback off
 set verify off
 set heading on
 
 /* start C:\Users\evana\Desktop\IS480\homeworks\hw2\hw2.sql */
 
-/* #1 Display as transNum| transDate| acctNum| transType| amount */
-select transNum,transDate,acctNum,
-	decode(transType,'Debit',0,amount) as Credit,
-	decode(transType,'Credit',0,amount) as Debit
+/* #1 Display students who are not IS majors */
+select count(*) as Students
+	from students
+	where nvl(major,'N/A') != 'IS';
+
+
+/* #2 Diplay as transNum| transDate| acctNum| amount| */
+ select transNum, transDate, acctNum,
+ 	decode(transtype,'Credit',amount,0) - decode(transtype,'Debit',amount,0) as Amount
+ 	from trans;
+
+
+/* #3 Display account_number without '-' */
+select acctNum,substr(acctNum,1,instr(acctNum,'-')-1)||substr(acctNum,instr(acctNum,'-')+1)  as "AccNum"
+	from trans; 
+
+/* #4 Display the potrion of the text after @ and before . */
+select substr(substr(emails,1,instr(emails,'.')-1),instr(emails,'@')+1) as "EmailProvider"
 	from trans;
 
-/* Display transNum| acctNum| amount */
-select transNum, acctNum, 
-	decode(transType,'Credit',amount,0) + decode(transType,'Debit',-(amount),0) as Amount
-	from trans;
+/* #5 Find the remainder of 7/2 */
+select mod(7,2) from dual;
 
+/* #6 Find the integer portion of 7/2 */
+select trunc(7/2) from dual;
 
+/* #7 Find the rounded result of 7/2 */
+select round(7/2) from dual;
 	
