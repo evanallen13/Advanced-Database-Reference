@@ -17,7 +17,8 @@ select sum(decode(major,'IS',1,0)) as "IS",
 	from stu;
 
 /* #3 Display number of students by gender and by major */
-select sum(decode(major,'IS',1,0)) as "IS",
+select decode(gender,'M','Male','F','Female')as Gender,
+	sum(decode(major,'IS',1,0)) as "IS",
 	sum(decode(major,'ACC',1,0)) as ACC,
 	sum(decode(major,'Fin',1,0)) as FIN,
 	sum(decode(major,'MKT',1,0)) as MKT
@@ -25,7 +26,8 @@ select sum(decode(major,'IS',1,0)) as "IS",
 	group by gender; 
 
 /* #4 Display number of students by major and by gender */
-select sum(decode(gender,'M',1,0)) as Male,
+select major as Major,
+	sum(decode(gender,'M',1,0)) as Male,
 	sum(decode(gender,'F',1,0)) as Female
 	from stu
 	group by major
