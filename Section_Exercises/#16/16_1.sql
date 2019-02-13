@@ -9,5 +9,3 @@ set heading on
 select callnum,semester
 from schclasses
 order by decode(semester,'Sp',1,'Su1',2,'Su2',3,'Fa',4);
-
-/* 
