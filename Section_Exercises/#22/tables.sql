@@ -71,14 +71,42 @@ insert into courses values ('IS','310','Business Comm',3,3);
 insert into courses values ('ACC','300','Basic Accounting',4,3);
 insert into courses values ('ACC','480','Advanced Accounting',4,4);
 
-insert into schclasses values (10110,2013,'Sp','IS','300',1,45);
-insert into schclasses values (10115,2013,'Sp','IS','300',2,35);
-insert into schclasses values (10120,2013,'Sp','BIO','101',1,35);
-insert into schclasses values (10125,2013,'Fa','ACC','300',1,118);
-insert into schclasses values (10130,2013,'Fa','ACC','300',2,33);
+insert into schclasses values (10110,2013,'Sp','IS','300',1,6);
+insert into schclasses values (10115,2013,'Sp','IS','300',2,7);
+insert into schclasses values (10120,2013,'Sp','BIO','101',1,5);
+insert into schclasses values (10125,2013,'Fa','ACC','300',1,5);
+insert into schclasses values (10130,2013,'Fa','ACC','300',2,8);
 
-insert into enrollments values (101,10110,'A',4);
-insert into enrollments values (102,10110,'B',3);
-insert into enrollments values (103,10120,'A',4);
-insert into enrollments values (101,10125,'C',2);
-insert into enrollments values (102,10130,'F',0);
+insert into enrollments(snum,callnum,grade) values (102,10130,'C');
+insert into enrollments(snum,callnum,grade) values (104,10130,'A');
+insert into enrollments(snum,callnum,grade) values (106,10130,'B');
+insert into enrollments(snum,callnum,grade) values (101,10130,'A');
+insert into enrollments(snum,callnum,grade) values (105,10130,'C');
+insert into enrollments(snum,callnum,grade) values (103,10130,'A');
+insert into enrollments(snum,callnum,grade) values (102,10125,'C');
+insert into enrollments(snum,callnum,grade) values (105,10125,'B');
+insert into enrollments(snum,callnum,grade) values (101,10125,'A');
+insert into enrollments(snum,callnum,grade) values (103,10125,'D');
+insert into enrollments(snum,callnum,grade) values (104,10125,'F');
+insert into enrollments(snum,callnum,grade) values (106,10125,'B');
+insert into enrollments(snum,callnum,grade) values (101,10120,'F');
+insert into enrollments(snum,callnum,grade) values (103,10120,'A');
+insert into enrollments(snum,callnum,grade) values (102,10120,'B');
+insert into enrollments(snum,callnum,grade) values (106,10120,'B');
+insert into enrollments(snum,callnum,grade) values (104,10120,'D');
+insert into enrollments(snum,callnum,grade) values (105,10120,'A');
+insert into enrollments(snum,callnum,grade) values (104,10115,'A');
+insert into enrollments(snum,callnum,grade) values (101,10115,'C');
+insert into enrollments(snum,callnum,grade) values (105,10115,'A');
+insert into enrollments(snum,callnum,grade) values (103,10115,'D');
+insert into enrollments(snum,callnum,grade) values (106,10115,'A');
+insert into enrollments(snum,callnum,grade) values (102,10115,'B');
+insert into enrollments(snum,callnum,grade) values (105,10110,'C');
+insert into enrollments(snum,callnum,grade) values (101,10110,'C');
+insert into enrollments(snum,callnum,grade) values (104,10110,'A');
+insert into enrollments(snum,callnum,grade) values (106,10110,'B');
+insert into enrollments(snum,callnum,grade) values (103,10110,'B');
+insert into enrollments(snum,callnum,grade) values (102,10110,'A');
+
+
+
