@@ -7,3 +7,5 @@ set heading off
 
 update enrollments
 	set gdpt = decode(grade,'A',4,'B',3,'C',2,'D',1,'F',0);
+
+
