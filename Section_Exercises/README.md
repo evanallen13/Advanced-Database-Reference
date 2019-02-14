@@ -21,4 +21,4 @@
 * 19 - Self join
 * 20 - Self join
 * 21 - Decode
-
+* 22 - Subquery, Decode
