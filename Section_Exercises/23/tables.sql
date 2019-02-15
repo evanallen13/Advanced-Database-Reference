@@ -1,4 +1,4 @@
-cdset echo off
+set echo off
 set feedback on
 set verify on
 set heading on
