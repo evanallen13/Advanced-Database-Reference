@@ -11,14 +11,14 @@
 * 9  - Decode 
 * 10 - Union, Intersect, Minus
 * 11 - Decode
-* 12 - Substr
-* 13 - Substr, Instr
-* 14 - Substr, Instr
-* 15 - Mod 
-* 16 - Decode 
-* 17 - Case
-* 18 - Subquery
-* 19 - Self join
-* 20 - Self join
-* 21 - Decode
-* 22 - [Subquery, Decode](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/22)
+* 12 - [Substr](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/12)
+* 13 - [Substr,Instr](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/13)
+* 14 - [Substr,Instr](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/14)
+* 15 - [Mod](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/15)
+* 16 - [Decode](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/16)
+* 17 - [Case](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/17)
+* 18 - [Subquery](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/18)
+* 19 - [Self join](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/19)
+* 20 - [Self join](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/20)
+* 21 - [Decode](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/21)
+* 22 - [Subquery,Decode](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/22)
