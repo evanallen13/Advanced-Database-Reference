@@ -1,16 +1,16 @@
 # Section Exercises Table of Content
 ## Exercise number - Topics covered in exercise 
-* 1  - Join 
-* 2  - Grouping functions
-* 3  - Grouping functions
-* 4  - Grouping functions
-* 5  - Nvl 
-* 6  - Greatest and Least
-* 7  - Nvl
-* 8  - Decode
-* 9  - Decode 
-* 10 - Union, Intersect, Minus
-* 11 - Decode
+* 1  - [Join](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/01)
+* 2  - [Grouping functions](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/02)
+* 3  - [Grouping functions](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/03)
+* 4  - [Grouping functions](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/04)
+* 5  - [Nvl](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/05)
+* 6  - [Greatest and Least](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/06)
+* 7  - [Nvl](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/07)
+* 8  - [Decode](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/08)
+* 9  - [Decode](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/09)
+* 10 - [Union,Intersect,Minus](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/10)
+* 11 - [Decode](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/11)
 * 12 - [Substr](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/12)
 * 13 - [Substr,Instr](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/13)
 * 14 - [Substr,Instr](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/14)
