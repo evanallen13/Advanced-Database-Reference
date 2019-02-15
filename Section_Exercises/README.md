@@ -21,4 +21,4 @@
 * 19 - Self join
 * 20 - Self join
 * 21 - Decode
-* 22 - [Subquery, Decode](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/%239)
+* 22 - [Subquery, Decode](https://github.com/evanallen13/Advanced-Database-class-assignments/tree/master/Section_Exercises/22)
