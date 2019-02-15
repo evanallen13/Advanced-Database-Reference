@@ -12,4 +12,6 @@ select items.i, unitprice, temp.separate
 			where items.i = itemDetails.include
 			group by itemDetails.i) temp, items
 	where temp.separate < unitprice
-	and items.i = temp.i;
+	and items.i = temp.i; /* items.i = combo */
+
+/* Disply items where the combo is more expensive that the combo */
