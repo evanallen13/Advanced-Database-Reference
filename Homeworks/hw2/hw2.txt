@@ -1,0 +1,80 @@
+Evan Allen Hw2 
+
+SQL> 
+SQL> /* #1 Display students who are not IS majors */
+SQL> select count(*) as Students
+  2  	     from students
+  3  	     where nvl(major,'N/A') != 'IS';
+
+  STUDENTS                                                                      
+----------                                                                      
+         3                                                                      
+SQL> 
+SQL> /* #2 Diplay as transNum| transDate| acctNum| amount| */
+SQL>  select transNum, transDate, acctNum,
+  2  	     decode(transtype,'Credit',amount,0) - decode(transtype,'Debit',amount,0) as Amount
+  3  	     from trans;
+
+  TRANSNUM TRANSDATE ACCTNUM             AMOUNT                                 
+---------- --------- --------------- ----------                                 
+       101 01-FEB-16 123-0097                10                                 
+       102 01-FEB-16 X089-056                10                                 
+       103 02-FEB-16 123-0097                -8                                 
+       104 02-FEB-16 123-0097               -10                                 
+       105 02-FEB-16 F3377-D                 10                                 
+       106 02-FEB-16 X089-056                -9                                 
+       107 02-FEB-16 X089-056                -9                                 
+       108 03-FEB-16 123-0097                 9                                 
+SQL> 
+SQL> /* #3 Display account_number without '-' */
+SQL> select acctNum,substr(acctNum,1,instr(acctNum,'-')-1)||substr(acctNum,instr(acctNum,'-')+1)  as "AccNum"
+  2  	     from trans;
+
+ACCTNUM         AccNum                                                          
+--------------- ------------------------------                                  
+123-0097        1230097                                                         
+X089-056        X089056                                                         
+123-0097        1230097                                                         
+123-0097        1230097                                                         
+F3377-D         F3377D                                                          
+X089-056        X089056                                                         
+X089-056        X089056                                                         
+123-0097        1230097                                                         
+SQL> 
+SQL> /* #4 Display the potrion of the text after @ and before . */
+SQL> select substr(substr(emails,1,instr(emails,'.')-1),instr(emails,'@')+1) as "EmailProvider"
+  2  	     from trans;
+
+EmailProvider                                                                   
+------------------------------                                                  
+csulb                                                                           
+chapman                                                                         
+msn                                                                             
+yahoo                                                                           
+bobafetty                                                                       
+gmail                                                                           
+darkside                                                                        
+lightside                                                                       
+SQL> 
+SQL> /* #5 Find the remainder of 7/2 */
+SQL> select mod(7,2) as Remainder from dual;
+
+ REMAINDER                                                                      
+----------                                                                      
+         1                                                                      
+SQL> 
+SQL> /* #6 Find the integer portion of 7/2 */
+SQL> select trunc(7/2) as "Integer" from dual;
+
+   Integer                                                                      
+----------                                                                      
+         3                                                                      
+SQL> 
+SQL> /* #7 Find the rounded result of 7/2 */
+SQL> select round(7/2) as Rounded from dual;
+
+   ROUNDED                                                                      
+----------                                                                      
+         4                                                                      
+SQL> 
+SQL> spool off

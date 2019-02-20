@@ -3,7 +3,7 @@ set feedback on
 set verify on
 set heading on
 
-/* start C:\Users\evana\Desktop\IS480\section_exercises\#24\tables.sql */
+/* start C:\Users\evana\Desktop\IS480\section_exercises\24\tables.sql */
 
 drop table enrollments;
 drop table schclasses;
@@ -87,11 +87,11 @@ insert into enrollments(snum,callnum,grade) values (102,10125,'C');
 insert into enrollments(snum,callnum,grade) values (105,10125,'B');
 insert into enrollments(snum,callnum,grade) values (101,10125,'A');
 insert into enrollments(snum,callnum,grade) values (103,10125,'D');
-insert into enrollments(snum,callnum,grade) values (104,10125,'F');
+insert into enrollments(snum,callnum,grade) values (104,10125,'A');
 insert into enrollments(snum,callnum,grade) values (106,10125,'B');
-insert into enrollments(snum,callnum,grade) values (101,10120,'F');
+insert into enrollments(snum,callnum,grade) values (101,10120,'B');
 insert into enrollments(snum,callnum,grade) values (103,10120,'A');
-insert into enrollments(snum,callnum,grade) values (102,10120,'B');
+insert into enrollments(snum,callnum,grade) values (102,10120,'F');
 insert into enrollments(snum,callnum,grade) values (106,10120,'B');
 insert into enrollments(snum,callnum,grade) values (104,10120,'D');
 insert into enrollments(snum,callnum,grade) values (105,10120,'A');
