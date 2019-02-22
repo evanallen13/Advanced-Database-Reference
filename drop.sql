@@ -6,5 +6,6 @@ drop table STUDENTS;
 drop table COURSES;
 drop table SCHCLASSES;
 drop table ENROLLMENTS;
+drop table trans;
 
 select table_name from user_tables;
