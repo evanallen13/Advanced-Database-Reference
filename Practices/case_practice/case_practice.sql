@@ -14,3 +14,14 @@ case
 	when gpa >= 1 and gpa < 2 then 'D'
 end as "Grade"
 from stu;
+
+/* An update Case Statement */
+update enrollments 
+	set gdpt = (
+	case 
+		when grade = 'A' then 4
+		when grade = 'B' then 3
+		when grade = 'C' then 2
+		when grade = 'D' then 1
+		when grade = 'F' then 0
+	end)

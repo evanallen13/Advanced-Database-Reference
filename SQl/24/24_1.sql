@@ -118,11 +118,11 @@ select sname
 	and year = 2013;
 
 /* #12 Display courses with more than 2 students */
-select dept, cnum, count(*)
+select dept, cnum, count(snum) as 
 	from enrollments, schclasses
 	where enrollments.callnum = schclasses.callnum
 	group by dept, cnum
-	having count(*);
+	having count(snum) > 2;
 
 /* #13 Display clases where no students are enrolled */
 select cnum
@@ -130,3 +130,10 @@ select cnum
 	where cnum not in(select cnum from enrollments,schclasses where enrollments.callnum = schclasses.callnum);
 
 /* #14 Display student who are currently enrolled in multiple sections of the same course */
+select snum, count(*)
+	from enrollments, schclasses
+	where enrollments.callnum = schclasses.callnum
+	group by snum, dept, cnum, semester, year
+	having count(*) > 2;
+
+/* #15 Find callnum where all grades are assigned; in other words, wvery student in the class recieved a grade */
