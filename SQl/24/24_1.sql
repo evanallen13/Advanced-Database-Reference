@@ -85,8 +85,48 @@ select grade
 	and cnum = 300;
 
 /* #9 Display courses that Andy has taken twice */
-select 
+select cnum as "More than 2 classes"
 	from students, enrollments, schclasses
 	where students.snum = enrollments.snum
 	and schclasses.callnum = enrollments.callnum
-	
+	and sname = 'Andy'
+	group by cnum 
+	having count(*) > 2;
+
+/* #10 Display courses where there is an Null grade */
+select dept||cnum
+	from schclasses
+	where dept||cnum not in (select dept||cnum from schclasses, enrollments where schclasses.callNum = enrollments.callNum);
+
+/* #11 Display students who are both in IS 300 and IS 301 in Fall 2013 */
+select sname 
+	from students, enrollments, schclasses
+	where students.snum = enrollments.snum
+	and enrollments.callnum = schclasses.callnum
+	and dept = 'IS'
+	and cnum = 300
+	and semester = 'Fa'
+	and year = 2013
+intersect
+select sname 
+	from students, enrollments, schclasses
+	where students.snum = enrollments.snum
+	and enrollments.callnum = schclasses.callnum
+	and dept = 'IS'
+	and cnum = 301
+	and semester = 'Fa'
+	and year = 2013;
+
+/* #12 Display courses with more than 2 students */
+select dept, cnum, count(*)
+	from enrollments, schclasses
+	where enrollments.callnum = schclasses.callnum
+	group by dept, cnum
+	having count(*);
+
+/* #13 Display clases where no students are enrolled */
+select cnum
+	from schclasses
+	where cnum not in(select cnum from enrollments,schclasses where enrollments.callnum = schclasses.callnum);
+
+/* #14 Display student who are currently enrolled in multiple sections of the same course */
