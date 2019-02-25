@@ -3,7 +3,7 @@ set feedback on
 set verify on
 set heading on
 
-/* start C:\Users\evana\Desktop\IS480\six\tables.sql */
+/* start C:\Users\evana\Desktop\IS480\sql\06\tables.sql */
 
 drop table IS380;
 

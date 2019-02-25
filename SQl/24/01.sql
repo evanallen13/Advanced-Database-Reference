@@ -5,22 +5,31 @@ set heading on
 
 /* start C:\Users\evana\Desktop\IS480\sql\24\01.sql */
 
-select temp2.grade as Grades, count(temp.grade) as Count
-	from (select grade
-		from enrollments
-		where callNum = 10110) temp,
-		(select distinct(grade)
-		from enrollments) temp2
-	where temp2.grade = temp.grade(+)
-	group by temp2.grade
-	order by temp2.grade;
+/* Decode */
+select sname, 
+	decode(standing,4,'Senior',3,'Junior',2,'Sophmore',1,'Freshman','None') as "Class"
+	from students;
+
+select gpa,decode(floor(gpa),4,'A',3,'B',2,'C',1,'D',0)
+	from students;
 
 
-select grade, count(*)
-	from enrollments
-	where callNum = 10110
-	group by grade;
+select major,
+	count(decode(gender,'M','Male')) as Male,
+	count(decode(gender,'F','Female')) as Female
+	from students
+	group by major;
 
-select grade, count(*)
-	from enrollments
-	group by grade;
+select cast(dept as varchar2(4)) as "dept",
+	cast(cnum as number(3)) as "Cnun",
+	ctitle
+	from courses;
+
+select dept
+	from courses
+	order by
+	case 
+		when dept = 'IS' then 1 
+		when dept = 'BIO' then 2
+		when dept = 'ACC' then 3
+	end;

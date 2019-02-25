@@ -137,3 +137,4 @@ select snum, count(*)
 	having count(*) > 2;
 
 /* #15 Find callnum where all grades are assigned; in other words, wvery student in the class recieved a grade */
+

@@ -3,7 +3,7 @@ set feedback on
 set verify off
 set heading off
 
-/* start C:\Users\evana\Desktop\IS480\section_exercises\#21\tables.sql */
+/* start C:\Users\evana\Desktop\IS480\sql\21\tables.sql */
 
 drop table trans;
 

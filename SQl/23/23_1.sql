@@ -15,3 +15,4 @@ select items.i, unitprice, temp.separate
 	and items.i = temp.i; /* items.i = combo */
 
 /* Disply items where the combo is more expensive that the combo */
+select 
