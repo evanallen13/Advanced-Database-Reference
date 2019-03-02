@@ -1,17 +1,17 @@
 set serveroutput on 
 set echo on
 
-/* start C:\Users\evana\Desktop\IS480\PL_SQL\02_Variables\2_2.sql */
+/* start C:\Users\evana\Desktop\IS480\PL_SQL\02_Variables\2_3.sql */
 
-/* Write a procedure    */
-create or replace procedure Ralphs (
-	v_pay number) as 
-	
+/* Buy 4 get 1 free deal */
+create or replace procedure Raplphs(
+	v_pay number) as
 	p_buy number(4);
 
-begin 
-	p_buy := mod(v_pay,4);
-	dbms_output.put_line(p_buy);
+	begin
+	p_buy := v_pay - floor(v_pay/5);
+	dbms_output.put_line
+
 end;
 /
 
@@ -27,3 +27,5 @@ exec Ralphs(9);
 exec Ralphs(10);
 exec Ralphs(11);
 exec Ralphs(12);
+exec Ralphs(13);
+exec Ralphs(14);
