@@ -1,7 +1,8 @@
 set serveroutput on 
 set echo on
 
-/* start C:\Users\evana\Desktop\IS480\PL_SQL\02_Variables\2_3.sql */
+spool C:\Users\evana\Desktop\IS480\homeworks\hw3\2_3.txt
+/* start C:\Users\evana\Desktop\IS480\homeworks\hw3\2_3.sql */
 
 /* Write a procedure that calculates how many you pay for when its buy 3 get 1 free */
 create or replace procedure Ralphs (
@@ -17,6 +18,6 @@ end;
 
 
 exec Ralphs(5);
-exec Ralphs(10);
-exec Ralphs(13);
-
+exec Ralphs(8);
+exec Ralphs(12);
+spool off;

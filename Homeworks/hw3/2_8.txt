@@ -1,0 +1,28 @@
+SQL> /* start C:\Users\evana\Desktop\IS480\homeworks\hw3\2_8.sql */
+SQL> 
+SQL> create or replace procedure MyRemoveOne (
+  2  	     p_text varchar,
+  3  	     p_char varchar) as
+  4  
+  5  	     v_Result varchar(15);
+  6  
+  7  begin
+  8  	     v_Result := (substr(p_char,1,(instr(p_char,p_text))-1))||(substr(p_char,(instr(p_char,p_text))+1));
+  9  	     dbms_output.put_line(v_Result);
+ 10  end;
+ 11  /
+
+Procedure created.
+
+SQL> 
+SQL> exec MyRemoveOne('-','281-1896');
+2811896                                                                         
+
+PL/SQL procedure successfully completed.
+
+SQL> exec MyRemoveOne('*','28118*96');
+2811896                                                                         
+
+PL/SQL procedure successfully completed.
+
+SQL> spool off;
