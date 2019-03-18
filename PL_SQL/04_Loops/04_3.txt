@@ -1,0 +1,51 @@
+SQL> /* start C:\Users\evana\Desktop\IS480\PL_SQL\04_loops\04_3.sql */
+SQL> 
+SQL> create or replace procedure LoveWizard(
+  2  	     p_MagicNumber number)as
+  3  
+  4  	     mes varchar2(15);
+  5  begin
+  6  	     for i in 1..p_MagicNumber loop
+  7  		     if (i = p_MagicNumber) then
+  8  			     dbms_output.put_line(chr(13));
+  9  			     if (mod(i,2) =0 ) then
+ 10  				     dbms_output.put_line('===> He loves you!!!');
+ 11  			     else
+ 12  				     dbms_output.put_line('===> He loves you not :-(');
+ 13  			     end if;
+ 14  		     elsif (mod(i,2) !=0 ) then
+ 15  			     dbms_output.put_line('He loves you...');
+ 16  		     else
+ 17  			     dbms_output.put_line('He loves you not...');
+ 18  		     end if;
+ 19  	     end loop;
+ 20  end;
+ 21  /
+
+Procedure created.
+
+SQL> exec LoveWizard(7);
+He loves you...                                                                 
+He loves you not...                                                             
+He loves you...                                                                 
+He loves you not...                                                             
+He loves you...                                                                 
+He loves you not...                                                             
+                                                                               
+===> He loves you not :-(                                                       
+
+PL/SQL procedure successfully completed.
+
+SQL> exec LoveWizard(6);
+He loves you...                                                                 
+He loves you not...                                                             
+He loves you...                                                                 
+He loves you not...                                                             
+He loves you...                                                                 
+                                                                               
+===> He loves you!!!                                                            
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> spool off;

@@ -47,26 +47,26 @@ create table enrollments(
 	constraint fk_enrollments_snum foreign key (snum) references students(snum),
 	constraint fk_enrollments_callnum foreign key (callnum) references SchClasses(callnum));
 
-insert into students(snum,sname,major) values ('101','Dylan','MKT');
-insert into students(snum,sname,major) values ('102','Elijah','IS');
-insert into students(snum,sname,major) values ('103','Henry','ACCT');
-insert into students(snum,sname,major) values ('104','Sophia','ACCT');
-insert into students(snum,sname,major) values ('105','Ethan','ACCT');
-insert into students(snum,sname,major) values ('106','Liam','IS');
-insert into students(snum,sname,major) values ('107','Alexander','ACCT');
-insert into students(snum,sname,major) values ('108','Elijah','MKT');
-insert into students(snum,sname,major) values ('109','Logan','IS');
-insert into students(snum,sname,major) values ('110','Wyatt','ACCT');
-insert into students(snum,sname,major) values ('111','John','MKT');
-insert into students(snum,sname,major) values ('112','Logan','ACCT');
-insert into students(snum,sname,major) values ('113','Jayden','IS');
-insert into students(snum,sname,major) values ('114','Wyatt','IS');
-insert into students(snum,sname,major) values ('115','Abigail','IS');
-insert into students(snum,sname,major) values ('116','Dylan','MKT');
-insert into students(snum,sname,major) values ('117','Henry','IS');
-insert into students(snum,sname,major) values ('118','Noah','IS');
-insert into students(snum,sname,major) values ('119','Joseph','IS');
-insert into students(snum,sname,major) values ('120','Alexander','ACCT');
+insert into students(snum,standing,sname,major) values ('101',3,'Dylan','MKT');
+insert into students(snum,standing,sname,major) values ('102',2,'Elijah','IS');
+insert into students(snum,standing,sname,major) values ('103',4,'Henry','ACCT');
+insert into students(snum,standing,sname,major) values ('104',1,'Sophia','ACCT');
+insert into students(snum,standing,sname,major) values ('105',2,'Ethan','ACCT');
+insert into students(snum,standing,sname,major) values ('106',3,'Liam','IS');
+insert into students(snum,standing,sname,major) values ('107',4,'Alexander','ACCT');
+insert into students(snum,standing,sname,major) values ('108',2,'Elijah','MKT');
+insert into students(snum,standing,sname,major) values ('109',3,'Logan','IS');
+insert into students(snum,standing,sname,major) values ('110',1,'Wyatt','ACCT');
+insert into students(snum,standing,sname,major) values ('111',2,'John','MKT');
+insert into students(snum,standing,sname,major) values ('112',3,'Logan','ACCT');
+insert into students(snum,standing,sname,major) values ('113',4,'Jayden','IS');
+insert into students(snum,standing,sname,major) values ('114',2,'Wyatt','IS');
+insert into students(snum,standing,sname,major) values ('115',4,'Abigail','IS');
+insert into students(snum,standing,sname,major) values ('116',1,'Dylan','MKT');
+insert into students(snum,standing,sname,major) values ('117',3,'Henry','IS');
+insert into students(snum,standing,sname,major) values ('118',3,'Noah','IS');
+insert into students(snum,standing,sname,major) values ('119',1,'Joseph','IS');
+insert into students(snum,standing,sname,major) values ('120',4,'Alexander','ACCT');
 
 insert into courses values ('IS',210,'Excel',3,2);
 insert into courses values ('IS',300,'Intro to MIS',3,3);

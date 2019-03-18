@@ -1,6 +1,7 @@
 set serveroutput on 
 set echo on
 
+spool C:\Users\evana\Desktop\IS480\PL_SQL\04_loops\04_3.txt
 /* start C:\Users\evana\Desktop\IS480\PL_SQL\04_loops\04_3.sql */
 
 create or replace procedure LoveWizard(
@@ -25,3 +26,6 @@ begin
 end;
 /
 exec LoveWizard(7);
+exec LoveWizard(6);
+
+spool off;
