@@ -32,8 +32,8 @@ begin
 		and callnum = p_callnum;
 			if (v_error_handler = 0) then
 				insert into enrollments(snum, callnum) values (p_snum,p_callnum);
-					commit;
-					dbms_output.put_line('You are enrolled!!');
+				commit;
+				dbms_output.put_line('You are enrolled!!');
 			else 
 				dbms_output.put_line('You are already enrolled');
 		end if;
