@@ -1,7 +1,7 @@
-set echo on
-set feedback on
-set verify on
-set heading on
+set echo off
+set feedback off
+set verify off
+set heading off
 /* start C:\Users\evana\Desktop\IS480\tables.sql */
 
 drop table enrollments;
@@ -125,7 +125,7 @@ insert into schclasses values (10235,2014,'Fa','MKT',350,3,'TTH','10:45',150,'Sk
 insert into schclasses values (10240,2014,'Fa','IS',480,2,'MW','10:00',170,'TBA',35);
 insert into schclasses values (10245,2014,'Fa','CBA',400,2,'MW','9:00',130,'jones',29);
 insert into schclasses values (10250,2014,'Fa','Math',210,2,'MW','12:45',150,'Fett',40);
-insert into schclasses values (10255,2014,'Fa','IS',380,1,'TTH','9:15',150,'TBA',38);
+insert into schclasses values (10255,2014,'Fa','IS',380,1,'TTH','9:15',150,'TBA',3);
 insert into schclasses values (10260,2014,'Sp','CBA',494,2,'TTH','12:30',190,'lee',29);
 insert into schclasses values (10265,2014,'Sp','MKT',210,1,'TTH','11:45',110,'smith',26);
 insert into schclasses values (10270,2014,'Sp','ACCT',202,2,'MW','9:30',190,'Fett',37);

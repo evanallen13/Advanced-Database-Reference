@@ -1,0 +1,52 @@
+SQL> /* start C:\Users\evana\Desktop\IS480\homeworks\hw4\Q1.sql */
+SQL> 
+SQL> create or replace procedure AddMe(
+  2  	     p_snum students.snum%type,
+  3  	     p_callnum enrollments.callnum%type) as
+  4  
+  5  	     v_capacity schclasses.capacity%type;
+  6  	     v_current_enrolled schclasses.capacity%type;
+  7  	     v_error_handler number(1);
+  8  
+  9  begin
+ 10  	     select capacity
+ 11  		     into v_capacity
+ 12  		     from schclasses
+ 13  		     where callnum = p_callnum;
+ 14  
+ 15  	     select count(*)
+ 16  		     into v_current_enrolled
+ 17  		     from enrollments
+ 18  		     where callnum = p_callnum
+ 19  		     group by callnum;
+ 20  
+ 21  	     IF v_capacity <= (v_current_enrolled + 1) then
+ 22  		     dbms_output.put_line('Class is already full!!');
+ 23  	     ELSIF v_capacity > (v_current_enrolled + 1) then
+ 24  		     select count(*) into v_error_handler
+ 25  			     from enrollments
+ 26  			     where snum = p_snum
+ 27  			     and callnum = p_callnum;
+ 28  
+ 29  			     if (v_error_handler = 0) then
+ 30  				     insert into enrollments(snum, callnum) values (p_snum,p_callnum);
+ 31  				     commit;
+ 32  				     dbms_output.put_line('You are enrolled!!');
+ 33  			     else
+ 34  				     dbms_output.put_line('You are already enrolled');
+ 35  		     end if;
+ 36  	     end IF;
+ 37  end;
+ 38  /
+SQL> 
+SQL> 
+SQL> exec AddMe(101,10285);
+You are enrolled!!                                                              
+SQL> exec AddMe(102,10285);
+You are enrolled!!                                                              
+SQL> exec AddMe(109,10135);
+You are already enrolled                                                        
+SQL> exec AddMe(105,10255);
+Class is already full!!                                                         
+SQL> 
+SQL> spool off;

@@ -1,0 +1,36 @@
+SQL> /* start C:\Users\evana\Desktop\IS480\homeworks\hw4\Q2.sql */
+SQL> 
+SQL> create or replace procedure DropMe(
+  2  	     p_snum students.snum%type,
+  3  	     p_callnum enrollments.callnum%type) as
+  4  
+  5  	     v_error_handler number(1);
+  6  
+  7  begin
+  8  	     select count(*)
+  9  	     into v_error_handler
+ 10  	     from enrollments
+ 11  	     where snum = p_snum
+ 12  	     and callnum = p_callnum;
+ 13  
+ 14  	     if (v_error_handler = 1) then
+ 15  		     update enrollments
+ 16  			     set grade = 'W'
+ 17  			     where snum = p_snum
+ 18  			     and callnum = p_callnum;
+ 19  		     dbms_output.put_line('Updated:'||sql%rowcount);
+ 20  	     elsif (v_error_handler = 0) then
+ 21  		     dbms_output.put_line('Error: Not enrolled.');
+ 22  	     end if;
+ 23  end;
+ 24  /
+SQL> 
+SQL> exec DropMe(101,10285);
+Updated:1                                                                       
+SQL> exec DropMe(102,10285);
+Updated:1                                                                       
+SQL> exec DropMe(109,10285);
+Updated:1                                                                       
+SQL> exec DropMe(105,10130);
+Error: Not enrolled.                                                            
+SQL> spool off;

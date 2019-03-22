@@ -1,6 +1,7 @@
 set serveroutput on 
 set echo on
 
+spool C:\Users\evana\Desktop\IS480\homeworks\hw4\Q2.txt
 /* start C:\Users\evana\Desktop\IS480\homeworks\hw4\Q2.sql */
 
 create or replace procedure DropMe(
@@ -21,16 +22,15 @@ begin
 			set grade = 'W'
 			where snum = p_snum
 			and callnum = p_callnum;
-		dbms_output.put_line('Updated:'||sql%rowcount)
+		dbms_output.put_line('Updated:'||sql%rowcount);
 	elsif (v_error_handler = 0) then 
 		dbms_output.put_line('Error: Not enrolled.');
 	end if;
 end;
 /
 
-show err;
-
 exec DropMe(101,10285);
 exec DropMe(102,10285);
-exec DropMe(102,10285);
-exec DropMe(102,10285);
+exec DropMe(109,10285);
+exec DropMe(105,10130);
+spool off;

@@ -1,6 +1,7 @@
 set serveroutput on 
 set echo on
 
+spool C:\Users\evana\Desktop\IS480\homeworks\hw4\Q1.txt
 /* start C:\Users\evana\Desktop\IS480\homeworks\hw4\Q1.sql */
 
 create or replace procedure AddMe(
@@ -13,23 +14,24 @@ create or replace procedure AddMe(
 
 begin 
 	select capacity 
-	into v_capacity
-	from schclasses
-	where callnum = p_callnum;
+		into v_capacity
+		from schclasses
+		where callnum = p_callnum;
 
 	select count(*) 
-	into v_current_enrolled
-	from enrollments
-	where callnum = p_callnum
-	group by callnum;
+		into v_current_enrolled
+		from enrollments
+		where callnum = p_callnum
+		group by callnum;
 
 	IF v_capacity <= (v_current_enrolled + 1) then 
 		dbms_output.put_line('Class is already full!!');
 	ELSIF v_capacity > (v_current_enrolled + 1) then 
 		select count(*) into v_error_handler 
-		from enrollments 
-		where snum = p_snum 
-		and callnum = p_callnum;
+			from enrollments 
+			where snum = p_snum 
+			and callnum = p_callnum;
+			
 			if (v_error_handler = 0) then
 				insert into enrollments(snum, callnum) values (p_snum,p_callnum);
 				commit;
@@ -41,5 +43,11 @@ begin
 end;
 /
 
-show  err;
+
 exec AddMe(101,10285);
+exec AddMe(102,10285);
+exec AddMe(109,10135);
+exec AddMe(105,10255);
+
+spool off;
+
