@@ -5,7 +5,7 @@ set echo off
 
 create or replace procedure proc_cap_space(
 	p_callnum schclasses.callnum%type,
-	p_cap_result out varchar)as 
+	p_cap_result out varchar2)as 
 
 	v_cur_enrolled schclasses.capacity%type;
 	v_capacity schclasses.capacity%type;
@@ -28,6 +28,3 @@ end;
 /
 
 show err;
-
-exec proc_cap_space(10255);
-exec proc_cap_space(10260);
