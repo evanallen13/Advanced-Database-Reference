@@ -19,12 +19,11 @@ begin
 		from schclasses
 		where callnum = p_callnum;
 
-	if ((v_cur_enrolled + 1) > v_capacity) then
-		dbms_output.put_line('Class is already full.');
+	if ((v_cur_enrolled + 1) >= v_capacity) then
+		dbms_output.put_line('Error: Class is already full.');
 	else 
 		p_cap_result := 'true';
 	end if;
 end;
 /
 
-show err;

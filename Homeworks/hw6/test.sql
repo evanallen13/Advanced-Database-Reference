@@ -17,7 +17,5 @@ begin
 end;
 /
 
-show err;
-
 exec TestMe(101,10110);
 exec TestMe(156,10110);

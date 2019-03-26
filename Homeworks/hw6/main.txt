@@ -1,0 +1,68 @@
+SQL> create or replace procedure AddMe(
+  2  	     p_snum students.snum%type,
+  3  	     p_callnum schclasses.callnum%type) as
+  4  
+  5  	     v_cap_result varchar2(5);
+  6  	     p_credit_result varchar2(5);
+  7  
+  8  begin
+  9  	     IF(func_valid_snum(p_snum) = 'true') then
+ 10  		     dbms_output.put_line('Snum: '||p_snum||' Exists');
+ 11  		     If (func_valid_callnum(p_callnum) = 'true') then
+ 12  			     dbms_output.put_line('Callnum: '||p_callnum||' Exists');
+ 13  
+ 14  			     -- Call procedures for Cap and Credit validation --
+ 15  			     proc_cap_space(p_callnum,v_cap_result);
+ 16  			     proc_credit_space(p_snum, p_callnum,p_credit_result);
+ 17  
+ 18  			     if(v_cap_result = 'true' and p_credit_result = 'true')then
+ 19  				     insert into enrollments(snum,callnum) values(p_snum,p_callnum);
+ 20  				     commit;
+ 21  				     dbms_output.put_line('You have been enrolled!!');
+ 22  			     else
+ 23  				     if(v_cap_result = 'false') then
+ 24  					     dbms_output.put_line('Error: Class already full!!');
+ 25  					     end if;
+ 26  				     if(p_credit_result = 'false') then
+ 27  					     dbms_output.put_line('Error: Students can only take 15 credit hours!!');
+ 28  					     end if;
+ 29  			     end if;
+ 30  		     Else
+ 31  			     dbms_output.put_line(func_valid_callnum(p_callnum));
+ 32  		     End If;
+ 33  	     ELSE
+ 34  		     dbms_output.put_line(func_valid_snum(p_snum));
+ 35  
+ 36  	     END IF;
+ 37  	     dbms_output.put_line(chr(10));
+ 38  end;
+ 39  /
+SQL> 
+SQL> exec AddMe(102,10115);
+Snum: 102 Exists                                                                
+Callnum: 10115 Exists                                                           
+You have been enrolled!!                                                        
+
+                                                                               
+SQL> exec AddMe(101,10510);
+Snum: 101 Exists                                                                
+Error: Could not validate Callnum 10510                                         
+
+                                                                               
+SQL> exec AddMe(101,10110);
+Snum: 101 Exists                                                                
+Callnum: 10110 Exists                                                           
+Error: Class is already full.                                                   
+Error: Students can only take 15 credit hours!!                                 
+
+                                                                               
+SQL> exec AddMe(156,10110);
+Error: Could not validate Snum 156                                              
+
+                                                                               
+SQL> exec AddMe(156,10510);
+Error: Could not validate Snum 156                                              
+
+                                                                               
+SQL> 
+SQL> spool off;
