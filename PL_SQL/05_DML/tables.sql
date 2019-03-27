@@ -14,7 +14,7 @@ create table students(
 	sname varchar2(15),
 	standing number(1),
 	major varchar2(4),
-	gpa number(1,2),
+	gpa number(3,2),
 	major_gpa number(1,2));
 
 create table Courses(
